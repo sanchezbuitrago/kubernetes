@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: sbapp
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        role: sbapp
+    spec:
+      containers:
+      - name: sbapp
+        image: sanchezbuitrago/app
+        imagePullPolicy: IfNotPresent        
+        ports:
+        - containerPort: 3000
