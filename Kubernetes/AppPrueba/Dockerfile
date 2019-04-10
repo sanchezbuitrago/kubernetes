@@ -8,4 +8,4 @@ RUN npm install
 # Bundle app source
 COPY api/ /usr/src/app
 EXPOSE 3000
-CMD [ "npm", "start" ]
+CMD [ "npx","nodemon", "app.js" ]
