@@ -1,0 +1,24 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: apprest
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: apprest
+    spec:
+      containers:
+      - name: sbapp
+        image: sanchezbuitrago/apprest:latest
+        imagePullPolicy: Always        
+        ports:
+        - containerPort: 3000
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "200m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"

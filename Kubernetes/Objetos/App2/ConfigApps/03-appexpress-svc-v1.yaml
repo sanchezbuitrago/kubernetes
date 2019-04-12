@@ -1,10 +1,10 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: hello-v2-svc
+  name: appexpress-v1-svc
 spec:
   selector:
-    app: hello-v2
+    app: appexpress
   ports:
   - protocol: TCP
     port: 80

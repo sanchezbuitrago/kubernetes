@@ -1,18 +1,18 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: hello-v2
+  name: appexpress
 spec:
   replicas: 3
   template:
     metadata:
       labels:
-        app: hello-v2
+        app: appexpress
     spec:
       containers:
       - name: sbapp
-        image: sanchezbuitrago/apprest:latest
-        imagePullPolicy: IfNotPresent        
+        image: sanchezbuitrago/appexpress:latest
+        imagePullPolicy: Always        
         ports:
         - containerPort: 3000
         resources:
@@ -22,3 +22,5 @@ spec:
           limits:
             memory: "128Mi"
             cpu: "500m"
+
+       

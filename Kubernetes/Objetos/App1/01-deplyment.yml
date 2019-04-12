@@ -1,26 +1,17 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: hello-v1
+  name: sbapp
 spec:
   replicas: 3
   template:
     metadata:
       labels:
-        app: hello-v1
+        role: sbapp
     spec:
       containers:
       - name: sbapp
-        image: sanchezbuitrago/appexpress:latest
+        image: sanchezbuitrago/app
         imagePullPolicy: IfNotPresent        
         ports:
         - containerPort: 3000
-        resources:
-          requests:
-            memory: "64Mi"
-            cpu: "200m"
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
-
-       
